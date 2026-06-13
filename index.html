@@ -1,59 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="robots" content="noindex">
-   <link rel="icon" type="image/png" href="images/heart.png">   
-   <link rel="stylesheet" href="optimized.css">
-   <title>Jordan+Mathew</title>
-</head>
-   
-<! Web Page>
-<body class="has-navbar-fixed-top">
-   
-<! Page Content>
-   <section class="section">
-      <div class="container">
-         <h1 class="title">
-            <div class="columns is-flex is-vcentered is-centered">
-               <img src="images/jordanandmathewheader.png" alt="Image">
-            </div>
-         </h1>
-         <br>
-         <br>
-         <div class="content">
-            <div class="columns is-flex is-vcentered is-centered"> 
-               <div class="box" style="max-width: 650px">
-                  <article class="media">
-                     <div class="media-content">
-                        <img src="images/jordanandmathewwedding.jpg" alt="Image">
-                     </div>
-                  </article>
-               </div>
-            </div>
-            <br>
-         </div>     
-      </div>
-   </section>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan+Mathew+One</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        blush: {
+                            200: '#f8dada',
+                            300: '#e5aebc',
+                            400: '#d48a9f', 
+                            500: '#c26b85',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #292524;
+            overflow-x: hidden;
+        }
+        
+        html { scroll-behavior: smooth; }
 
-<! Footer>
-   <footer class="footer">
-      <div class="columns is-flex is-vcentered is-centered"> 
-         <div class="box has-background-white-bis is-shadowless" style="max-width: 300px">
-            <article class="media">
-               <div class="media-content">
-                  <figure class="image is-centered is-96x96">
-                     <img src="images/heart.png">
-                  </figure> 
-               </div>
-            </article>
-         </div>
-      </div>  
-      <div class="content has-text-centered" style="font-weight: 100; color: #99ccff; font-size: small">
-         <p style="margin-bottom: 0px">&copy;2020 Jordan+Mathew</p>
-         <p>Howell, Michigan</p>
-      </div>
-   </footer>
+        /* Bright Glass Background Effect */
+        .pearl-container {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .pearl-burst {
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(
+                from 90deg at 50% 50%,
+                #ffffff 0deg,
+                #fff0f5 60deg,
+                #ffffff 120deg,
+                #f0ffff 180deg,
+                #ffffff 240deg,
+                #f8f4ff 300deg,
+                #ffffff 360deg
+            );
+            opacity: 0.85;
+            filter: blur(40px);
+            animation: drift-pearl 30s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .pearl-glow-center {
+            position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 120vw; height: 120vh;
+            background: radial-gradient(circle at center, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 40%, rgba(255,255,255,0) 80%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes drift-pearl {
+            0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+            33% { transform: translate(-48%, -52%) rotate(120deg) scale(1.05); }
+            66% { transform: translate(-52%, -48%) rotate(240deg) scale(0.95); }
+            100% { transform: translate(-50%, -50%) rotate(360deg) scale(1); }
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(212, 138, 159, 0.08);
+            transition: all 0.5s ease;
+        }
+
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 12px 40px 0 rgba(212, 138, 159, 0.15);
+            border-color: #ffffff;
+        }
+
+        /* Cinematic Whisper Transitions */
+        .fade-in-slow {
+            opacity: 0;
+            transform: translateY(15px);
+            filter: blur(4px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out, filter 1.5s ease-out;
+            will-change: opacity, transform, filter;
+        }
+        
+        .fade-in-slow.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.3s; }
+        .stagger-3 { transition-delay: 0.5s; }
+        .stagger-4 { transition-delay: 0.7s; }
+
+        /* Whimsical Arch */
+        .arch-frame {
+            border-radius: 1000px 1000px 16px 16px;
+        }
+
+        /* Legible Form Inputs */
+        .input-whisper {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(214, 211, 209, 0.8);
+            border-radius: 0;
+            padding: 10px 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            color: #292524;
+            transition: border-color 0.4s ease;
+        }
+        .input-whisper:focus {
+            outline: none;
+            border-bottom-color: #d48a9f;
+            box-shadow: none;
+        }
+        .input-whisper::placeholder {
+            color: rgba(168, 162, 158, 0.8);
+            font-style: italic;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-blush-300 selection:text-white relative">
+
+    <!-- Bright Mother of Pearl Background -->
+    <div class="pearl-container">
+        <div class="pearl-burst" id="pearl-layer"></div>
+        <div class="pearl-glow-center"></div>
+    </div>
+
+    <!-- Minimal Navigation -->
+    <nav class="fixed w-full top-0 z-50 transition-all duration-700 bg-white/30 backdrop-blur-md border-b border-white/60">
+        <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-xl tracking-[0.2em] text-stone-800 hover:text-blush-400 transition-colors duration-500 font-medium relative z-10">J<span class="italic text-blush-400 font-light">+</span>M<span class="italic text-blush-400 font-light">+</span><span class=text-base>♡</span></a>
+            <div class="space-x-8 text-xs uppercase tracking-[0.25em] font-medium flex items-center relative z-10">
+                <a href="#registry" class="text-stone-600 hover:text-blush-400 transition-colors duration-500">Registry</a>
+                <a href="#wishes" class="text-stone-600 hover:text-blush-400 transition-colors duration-500">Wishes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16 relative z-10">
+        
+        <div class="w-full max-w-2xl mx-auto flex flex-col items-center relative">
+            <p class="fade-in-slow text-xs md:text-sm uppercase tracking-[0.35em] text-stone-500 font-medium mb-6">
+                We are so excited to share
+            </p>
+            
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-[5.5rem] leading-none md:leading-[1.1] font-normal flex flex-col items-center">
+                <div class="fade-in-slow stagger-1 tracking-wide text-stone-800 flex flex-col md:flex-row items-center justify-center gap-0 md:gap-4 -space-y-2 md:space-y-0">
+                    <span>Jordan</span>
+                    <span class="italic text-blush-400 font-light">+</span>
+                    <span>Mathew</span>
+                    <span class="italic text-blush-400 font-light">+</span>
+                    <span>One</span>
+                </div>
+            </h1>
+            
+            <p class="fade-in-slow stagger-3 mt-8 mb-12 text-2xl md:text-2xl font-serif text-stone-600 italic tracking-wide">
+                Arriving October 2026
+            </p>
+
+            <!-- Whimsical Glass Arch Photo Placeholder -->
+            <div class="fade-in-slow stagger-4 w-full max-w-[280px] md:max-w-xs aspect-[3/4] glass-panel arch-frame p-2 md:p-3 flex items-center justify-center relative group">
+                <div class="w-full h-full border border-white/60 arch-frame flex flex-col items-center justify-center relative overflow-hidden bg-white/30">
+                    <!-- Replace img src below with your actual image URL -->
+                    <img src="announcement.jpg" alt="Announcement" class="absolute inset-0 w-full h-full object-cover z-10 arch-frame mix-blend-multiply" />
+                    
+                    <!-- <div class="relative z-0 flex flex-col items-center gap-4 text-blush-400 group-hover:text-blush-500 transition-colors duration-700 px-4">
+                        <svg class="w-8 h-8 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span class="font-serif italic text-xl md:text-2xl font-normal leading-tight">Waiting for a<br>photo</span>
+                    </div> -->
+                </div>
+            </div>
+            <!--
+            <div class="mt-12 text-blush-300 animate-bounce relative z-20">
+                <a href="#registry" class="hover:text-blush-500 transition-colors duration-500">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+            -->
+        </div>
+    </header>
+
+    <!-- Registry Section -->
+    <section id="registry" class="py-20 md:py-28 relative z-10">
+        <div class="max-w-5xl mx-auto px-6 text-center fade-in-slow">
+            <h2 class="font-serif text-4xl md:text-5xl text-stone-800 font-medium italic mb-4">Registry</h2>
+            <p class="max-w-md mx-auto text-stone-500 font-light text-sm tracking-wide leading-relaxed mb-12">
+                We are quietly preparing for our little one's arrival. If you would like to help us gather what we need, we are registered here.
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <a href="#" class="group glass-panel flex flex-col items-center justify-center py-6 relative rounded-2xl z-10">
+                    <span class="font-serif text-xl md:text-2xl text-stone-600 group-hover:text-blush-500 transition-colors duration-500 mb-2 tracking-wide">Target</span>
+                    <div class="w-0 h-[1px] bg-blush-300 group-hover:w-8 transition-all duration-500 ease-out"></div>
+                </a>
+
+                <a href="#" class="group glass-panel flex flex-col items-center justify-center py-6 relative rounded-2xl z-10">
+                    <span class="font-serif text-xl md:text-2xl text-stone-600 group-hover:text-blush-500 transition-colors duration-500 mb-2 tracking-wide">Crate & Barrel</span>
+                    <div class="w-0 h-[1px] bg-blush-300 group-hover:w-8 transition-all duration-500 ease-out"></div>
+                </a>
+
+                <a href="#" class="group glass-panel flex flex-col items-center justify-center py-6 relative rounded-2xl z-10">
+                    <span class="font-serif text-xl md:text-2xl text-stone-600 group-hover:text-blush-500 transition-colors duration-500 mb-2 tracking-wide">Pottery Barn</span>
+                    <div class="w-0 h-[1px] bg-blush-300 group-hover:w-8 transition-all duration-500 ease-out"></div>
+                </a>
+
+                <a href="#" class="group glass-panel flex flex-col items-center justify-center py-6 relative rounded-2xl z-10">
+                    <span class="font-serif text-xl md:text-2xl text-stone-600 group-hover:text-blush-500 transition-colors duration-500 mb-2 tracking-wide">Amazon</span>
+                    <div class="w-0 h-[1px] bg-blush-300 group-hover:w-8 transition-all duration-500 ease-out"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Well Wishes Section -->
+    <section id="wishes" class="py-20 md:py-28 relative z-10">
+        <div class="max-w-xl mx-auto px-6 text-center fade-in-slow">
+            <h2 class="font-serif text-4xl md:text-5xl text-stone-800 font-medium italic mb-4">Leave a Wish</h2>
+            <p class="text-stone-500 font-light text-sm tracking-wide leading-relaxed mb-10">
+                Please leave a note, a piece of advice, or a wish for the baby for us to read in the quiet moments.
+            </p>
+
+            <form id="wishes-form" name="submit-wishes" class="text-left space-y-8 glass-panel p-8 md:p-10 rounded-[2rem] relative z-10">
+                <div class="group">
+                    <label for="wish-name" class="block text-xs uppercase tracking-[0.25em] text-stone-500 font-medium mb-1 transition-colors duration-500 group-focus-within:text-blush-500">From</label>
+                    <input type="text" id="wish-name" name="name" required class="input-whisper w-full" placeholder="Your name...">
+                </div>
+
+                <div class="group">
+                    <label for="wish-message" class="block text-xs uppercase tracking-[0.25em] text-stone-500 font-medium mb-1 transition-colors duration-500 group-focus-within:text-blush-500">The Note</label>
+                    <textarea id="wish-message" name="message" required rows="3" class="input-whisper w-full resize-none" placeholder="Write something beautiful..."></textarea>
+                </div>
+
+                <div class="pt-6 text-center">
+                    <button type="submit" id="wishes-submit-btn" class="font-serif italic text-xl text-stone-600 hover:text-blush-500 transition-colors duration-500 disabled:opacity-50 tracking-wide relative group inline-flex flex-col items-center bg-transparent border-none cursor-pointer">
+                        <span>Send Love</span>
+                        <div class="w-full h-[1px] bg-stone-300 mt-1 group-hover:bg-blush-400 transition-colors duration-500"></div>
+                    </button>
+                </div>
+
+                <div id="wishes-message" class="hidden text-center mt-6 font-serif italic text-lg text-stone-600 font-medium"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Ethereal Footer -->
+    <footer class="pt-20 pb-24 relative z-10 text-center fade-in-slow">
+        <div class="w-[1px] h-16 bg-stone-300 mx-auto mb-10"></div>
+        <p class="font-serif text-xl md:text-2xl text-stone-600 italic font-medium mb-6">With love,</p>
+        
+        <h2 class="font-serif text-3xl md:text-4xl text-stone-800 tracking-wide mb-8 flex justify-center items-center">
+            Jordan<span class="italic text-blush-400 font-light">+</span>Mathew
+        </h2>
+    </footer>
+
+    <script>
+        // --- WHIMSICAL ANIMATIONS ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = { root: null, rootMargin: "0px", threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-slow').forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // --- WISHES FORM HANDLING TO GOOGLE SHEETS ---
+        const scriptURL = 'REPLACE_THIS_WITH_YOUR_WEB_APP_URL'; 
+        const form = document.getElementById('wishes-form');
+        const btn = document.getElementById('wishes-submit-btn');
+        const msg = document.getElementById('wishes-message');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const originalBtnContent = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="italic text-blush-400">Sending...</span><div class="w-full h-[1px] bg-transparent mt-1"></div>';
+            msg.classList.add('hidden');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = 'Your note has drifted to our inbox. Thank you.';
+                    msg.classList.remove('hidden', 'text-red-400');
+                    form.reset();
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnContent;
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    msg.innerHTML = "A soft breeze caught the note. Please try again.";
+                    msg.classList.remove('hidden');
+                    msg.classList.add('text-red-400');
+                    btn.disabled = false;
+                    btn.innerHTML = originalBtnContent;
+                });
+        });
+    </script>
 </body>
 </html>
