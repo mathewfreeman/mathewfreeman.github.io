@@ -328,7 +328,7 @@
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    msg.innerHTML = 'Your note has drifted to our inbox. Thank you.';
+                    msg.innerHTML = 'We look forward to reading your note. Thanks!';
                     msg.classList.remove('hidden', 'text-red-400');
                     form.reset();
                     btn.disabled = false;
@@ -336,7 +336,7 @@
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
-                    msg.innerHTML = "A soft breeze caught the note. Please try again.";
+                    msg.innerHTML = "Your note didn't send quite right. Please try again.";
                     msg.classList.remove('hidden');
                     msg.classList.add('text-red-400');
                     btn.disabled = false;
